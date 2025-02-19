@@ -2,6 +2,15 @@
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
+// Function to resize canvas
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+// Call resizeCanvas initially and add event listener for window resize
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 // Create Image objects
 const backgroundImage = new Image();
 const foregroundImage1 = new Image();
