@@ -9,8 +9,8 @@ const foregroundImage2 = new Image();
 
 // Set image sources
 backgroundImage.src = './images/background1.jpg';
-foregroundImage1.src = './images/Jerry_The_Mouse.jpg';
-foregroundImage2.src = './images/Tom_The_Cat.png';
+foregroundImage1.src = './images/Jerry_The_Mouse-removebg-preview.png';
+foregroundImage2.src = './images/Tom_The_Cat-removebg-preview.png';
 
 // Counter to track loaded images
 let loadedImages = 0;
