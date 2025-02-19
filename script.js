@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 // Create an Image object for the background
 const backgroundImage = new Image();
-backgroundImage.src = './images/background.jpg'; // Path to your background image
+backgroundImage.src = './images/background1.jpg'; // Path to your background image
 
 // Draw the background once it loads
 backgroundImage.onload = () => {
