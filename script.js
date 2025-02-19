@@ -27,8 +27,8 @@ function drawScene() {
     // Add text
     ctx.font = '30px Arial';
     ctx.fillStyle = 'white';
-    ctx.fillText('Your Name', 20, 50);
-    ctx.fillText('Scene Title', 20, 90);
+    ctx.fillText('Faizan Khan', 20, 50);
+    ctx.fillText('Monday Blues', 20, 90);
 }
 
 // Function to check if all images are loaded
