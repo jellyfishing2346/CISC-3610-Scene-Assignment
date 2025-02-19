@@ -24,6 +24,36 @@ foregroundImage2.src = './images/Tom_The_Cat-removebg-preview.png';
 // Counter to track loaded images
 let loadedImages = 0;
 
+// Function to draw a speech bubble
+function drawSpeechBubble(ctx, x, y, width, height, radius, text) {
+    // Draw bubble shape
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+
+    // Fill and stroke the bubble
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Add text inside the bubble
+    ctx.fillStyle = 'black';
+    ctx.font = '16px Arial';
+    const textX = x + 10; // Padding from left
+    const textY = y + 25; // Padding from top
+    ctx.fillText(text, textX, textY);
+}
+
 // Function to draw the scene
 function drawScene() {
     // Draw background
@@ -45,6 +75,15 @@ function checkAllImagesLoaded() {
     loadedImages++;
     if (loadedImages === 3) {  // We have 3 images in total
         drawScene();
+    }
+}
+
+// Function to check if all images are loaded before drawing the scene
+function checkAllImagesLoaded() {
+    loadedImages++;
+    if (loadedImages === 3) { // Ensure all three images are loaded before drawing the scene
+        drawScene();
+        window.addEventListener('resize', drawScene); // Redraw scene on window resize
     }
 }
 
